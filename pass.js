@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const passGenericInterval = 1;
+const passGenericInterval = 100;
 const stopTime = 10000;
 
 const passGenerator = (
@@ -28,7 +28,7 @@ const passGenerator = (
 const generic = setInterval(() => {
   const pass = passGenerator();
 
-  fs.appendFile("./passLog.txt", `${pass} `, (error) => {
+  fs.appendFile("./passLog.txt", `${pass} `, error => {
     if (error) throw error;
   });
 }, passGenericInterval);
